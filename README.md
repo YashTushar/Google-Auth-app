@@ -1,70 +1,112 @@
-# Getting Started with Create React App
+Google Authentication React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React application that allows users to log in using their Google account via Firebase Authentication.
 
-## Available Scripts
+Features
 
-In the project directory, you can run:
+Google Sign-In authentication
 
-### `npm start`
+User details displayed after login
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Logout functionality
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Hosted on Firebase
 
-### `npm test`
+Folder Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+google-auth-app/
+│── src/
+│   │── pages/
+│   │   │── LoginPage.js
+│   │   │── WelcomePage.js
+│   │── firebaseConfig.js
+│   │── App.js
+│── public/
+│── .gitignore
+│── firebase.json
+│── package.json
+│── README.md
 
-### `npm run build`
+Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Node.js installed (node -v to check)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Firebase project set up (Firebase Console)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Firebase CLI installed (npm install -g firebase-tools)
 
-### `npm run eject`
+Git installed (git --version to check)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clone the repository:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+git clone <your-repo-url>
+cd google-auth-app
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Install dependencies:
 
-## Learn More
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Set up Firebase:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Create a Firebase project at Firebase Console
 
-### Code Splitting
+Enable Google Authentication in Authentication → Sign-in method
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Generate Firebase config and add it to src/firebaseConfig.js:
 
-### Analyzing the Bundle Size
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
 
-### Making a Progressive Web App
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+export { auth, provider };
 
-### Advanced Configuration
+Running the App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+npm start
 
-### Deployment
+The app will run on http://localhost:3000/.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Hosting on Firebase
 
-### `npm run build` fails to minify
+Initialize Firebase Hosting:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+firebase login
+firebase init hosting
+
+Choose your Firebase project
+
+Set build as the public directory
+
+Enable SPA mode
+
+Build and Deploy:
+
+npm run build
+firebase deploy --only hosting
+
+Your app will be live on the provided Firebase Hosting URL!
+
+Contributing
+
+Feel free to fork and contribute by submitting a pull request.
+
+License
+
+This project is open-source and free to use.
+
+🚀 Happy Coding! 🎉
+
