@@ -1,18 +1,21 @@
 Google Authentication React App
 
+
+
+
 This is a simple React application that allows users to log in using their Google account via Firebase Authentication.
 
-Features
+🚀 Features
 
-Google Sign-In authentication
+🔑 Google Sign-In authentication
 
-User details displayed after login
+👤 User details displayed after login
 
-Logout functionality
+🔓 Logout functionality
 
-Hosted on Firebase
+🌍 Hosted on Firebase
 
-Folder Structure
+📂 Folder Structure
 
 google-auth-app/
 │── src/
@@ -27,7 +30,7 @@ google-auth-app/
 │── package.json
 │── README.md
 
-Prerequisites
+🛠 Prerequisites
 
 Node.js installed (node -v to check)
 
@@ -37,18 +40,18 @@ Firebase CLI installed (npm install -g firebase-tools)
 
 Git installed (git --version to check)
 
-Installation
+📥 Installation
 
-Clone the repository:
+1️⃣ Clone the repository
 
 git clone <your-repo-url>
 cd google-auth-app
 
-Install dependencies:
+2️⃣ Install dependencies
 
 npm install
 
-Set up Firebase:
+3️⃣ Set up Firebase
 
 Create a Firebase project at Firebase Console
 
@@ -74,15 +77,15 @@ const provider = new GoogleAuthProvider();
 
 export { auth, provider };
 
-Running the App
+🏃 Running the App
 
 npm start
 
 The app will run on http://localhost:3000/.
 
-Hosting on Firebase
+☁️ Hosting on Firebase
 
-Initialize Firebase Hosting:
+1️⃣ Initialize Firebase Hosting
 
 firebase login
 firebase init hosting
@@ -93,18 +96,18 @@ Set build as the public directory
 
 Enable SPA mode
 
-Build and Deploy:
+2️⃣ Build and Deploy
 
 npm run build
 firebase deploy --only hosting
 
 Your app will be live on the provided Firebase Hosting URL!
 
-Contributing
+🤝 Contributing
 
 Feel free to fork and contribute by submitting a pull request.
 
-License
+📜 License
 
 This project is open-source and free to use.
 
