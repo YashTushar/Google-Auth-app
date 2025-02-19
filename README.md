@@ -10,21 +10,8 @@ This is a simple React application that allows users to log in using their Googl
 
 🌍 Hosted on Firebase: The app is hosted on Firebase Hosting for easy deployment and scalability.
 
-📂 Folder Structure
-Copy
-google-auth-app/
-│── src/
-│   │── pages/
-│   │   │── LoginPage.js
-│   │   │── WelcomePage.js
-│   │── firebaseConfig.js
-│   │── App.js
-│── public/
-│── .gitignore
-│── firebase.json
-│── package.json
-│── README.md
-🛠 Prerequisites
+
+**🛠 Prerequisites**
 Before you begin, ensure you have the following installed:
 
 Node.js: Check if Node.js is installed by running node -v in your terminal.
